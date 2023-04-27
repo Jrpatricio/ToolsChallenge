@@ -18,7 +18,7 @@ public class PagamentoConverter {
     @Autowired
     private TransacaoConverter transacaoConverter;
 
-    public Pagamento executar(PagamentoRequest pagamentoRequest, Transacao transacao, FormaPagamento formaPagamento) {
+    public Pagamento executa(PagamentoRequest pagamentoRequest, Transacao transacao, FormaPagamento formaPagamento) {
         Pagamento pagamento = new Pagamento();
         pagamento.setId(pagamentoRequest.getTransacao().getId());
         pagamento.setCartao(pagamentoRequest.getTransacao().getCartao());

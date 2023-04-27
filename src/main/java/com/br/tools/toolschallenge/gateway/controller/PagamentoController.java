@@ -2,6 +2,7 @@ package com.br.tools.toolschallenge.gateway.controller;
 
 import com.br.tools.toolschallenge.domain.Pagamento;
 import com.br.tools.toolschallenge.gateway.controller.dto.PagamentoRequest;
+import com.br.tools.toolschallenge.interfaceadapter.converter.PagamentoConverter;
 import com.br.tools.toolschallenge.usecase.ConsultaPagamento;
 import com.br.tools.toolschallenge.usecase.ConsultaPagamentos;
 import com.br.tools.toolschallenge.usecase.CriaPagamento;
@@ -28,6 +29,9 @@ public class PagamentoController {
     @Autowired
     private ConsultaPagamentos consultaPagamentos;
 
+    @Autowired
+    private PagamentoConverter converter;
+
 
     @PostMapping
     public ResponseEntity<Object> criaPagamento(@Valid @RequestBody PagamentoRequest request) {
@@ -41,7 +45,7 @@ public class PagamentoController {
         if (pagamento.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.ok(pagamento.get());
+        return ResponseEntity.ok(converter.executa(pagamento.get()));
     }
 
     @GetMapping
@@ -52,4 +56,5 @@ public class PagamentoController {
         }
         return ResponseEntity.ok(pagamentos);
     }
+
 }
