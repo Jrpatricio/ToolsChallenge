@@ -119,7 +119,7 @@ Atraves do endereço http://localhost:8080 você pode acessar os seguintes recur
         "id": 100101001001001030,
             "cartao": "12345678910",
             "descricao": {
-            "valor": 500.50,
+            "valor": "500.50",
                 "dataHora": "01/05/2021 06:30:00",
                 "estabelecimento": "TESTE",
                 "nsu": "1234567890",
@@ -143,7 +143,7 @@ Atraves do endereço http://localhost:8080 você pode acessar os seguintes recur
             "id": 100101001001001030,
             "cartao": "12345678910",
             "descricao": {
-                "valor": 500.50,
+                "valor": "500.50",
                 "dataHora": "01/05/2021 06:30:00",
                 "estabelecimento": "TESTE",
                 "nsu": "1234567890",
